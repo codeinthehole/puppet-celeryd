@@ -29,11 +29,11 @@ same server (useful for small projects where a test and stage build may sit on
 the same machine).  Usage::
 
     include celeryd
-    celeryd::service { "celeryd":
+    celeryd::service { "celeryd-test":
         conf_path => "/var/www/project/config/celeryd/stage"
         environment => "test"
     }
-    celeryd::service { "celeryd":
+    celeryd::service { "celeryd-stage":
         conf_path => "/var/www/project/config/celeryd/test"
         environment => "stage"
     }
