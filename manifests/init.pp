@@ -14,7 +14,7 @@ class celeryd::base {
 	}
 }
 
-class celeryd::service (
+define celeryd::service (
 	$conf_path,
 	$environment='vagrant') {
 	file { "/etc/init.d/celeryd-$environment": 
@@ -29,12 +29,6 @@ class celeryd::service (
 	}
 }
 
-class celeryd (
-	$conf_path,
-	$environment='vagrant') {
+class celeryd {
 	include celeryd::base
-	class { "celeryd::service":
-	    conf_path => $conf_path,
-		environment => $environment
-	}
 }
